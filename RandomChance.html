@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    "use strict";
+        function slots( x , y){
+            console.log("You've started with " + x + " coins.  You may stop when you reach " + y + " coins or 0 coins.")
+            while ( x > 0){
+                console.log("You have " + x + "coins now.");
+                var w = (Math.floor(Math.random() * 100));
+                if (w == 33){
+                    var up = (Math.trunc(Math.random() * 50)) + 50;
+                    x += up;
+                    console.log("YOU'VE WON!! You gained " + up + " coins.  You now have " + x + " coins!" );
+                } else if ( w != 33) {
+                    console.log("You lost...  but it was only 1 coin.");
+                }
+                if (x >= y){
+                console.log("CONGRATULATIONS!!!  You've met your goal of " + y + " coins!");
+                break;
+                }
+                x = x - 1;
+            }
+            if (x == 0){
+                console.log ("GAME OVER");
+            }
+        }
+    </script>
+</head>
+
+</html>
